@@ -3,6 +3,6 @@ module com.example.currencyconverterjavafx {
     requires javafx.fxml;
 
 
-    opens com.example.currencyconverterjavafx to javafx.fxml;
-    exports com.example.currencyconverterjavafx;
+    opens nclan.ac.ahart.currencyconverterjavafx to javafx.fxml;
+    exports nclan.ac.ahart.currencyconverterjavafx;
 }

@@ -5,7 +5,16 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class HelloController {
+import java.text.NumberFormat;
+import java.util.Locale;
+
+/**
+ * Controller class for the Currency Converter application.
+ * The controller class plays a crucial role in JavaFX applications by acting as the bridge between the FXML markup that
+ * defines the user interface (UI) and the application's logic. It handles user interactions, manages data, and updates
+ * the UI based on changes in the data or user actions.
+ */
+public class CurrencyController {
     @FXML
     private Label labelOutput;
     @FXML
@@ -30,6 +39,9 @@ public class HelloController {
             {0.87, 1, 1.13},
             {0.77, 0.88, 1}};
 
+    /**
+     * initialise the FX components.
+     */
     @FXML
     public void initialize() {
         // Create an ObservableList of fruit options
@@ -69,12 +81,28 @@ public class HelloController {
             //do the conversion
             double result = convRate * amount;
 
+            //create a currency number formatter
+            NumberFormat currencyFormatter;
+            //set the details of the currency number formatter with details of the appropriate currency
+            if(cbDest.getValue().equals("EUR")) {
+                //create a Locale with Spanish language and country Spain
+                Locale aLocale = new Locale.Builder().setLanguage("es").setRegion("ES").build();
+                currencyFormatter = NumberFormat.getCurrencyInstance(aLocale);
+            }else if(cbDest.getValue().equals("USD")) {
+                currencyFormatter = NumberFormat.getCurrencyInstance(Locale.US);
+            }else{
+                currencyFormatter = NumberFormat.getCurrencyInstance(Locale.UK);
+            }
+
+            //format the converted amount to the correct format
+            String strResult = currencyFormatter.format(result);
+
             //update the screen with the result
-            String output = String.format("You will receive %.2f %s", result, cbDest.getSelectionModel().getSelectedItem());
+            String output = String.format("You will receive %s", strResult);
             labelOutput.setText(output);
 
             //create a string which contains the full information about the conversion that just took place. Output string to console.
-            String logOutput = String.format("Converting %.2f %s to %s gives %.2f.",amount,cbFrom.getValue(),cbDest.getValue(), result);
+            String logOutput = String.format("Converting %.2f %s gives %s",amount,cbFrom.getValue(),strResult);
             System.out.println(logOutput);
         }catch (NumberFormatException nfe)
         {

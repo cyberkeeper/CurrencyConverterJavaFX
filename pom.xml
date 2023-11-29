@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.currencyconverterjavafx/nclan.ac.ahart.currencyconverterjavafx.HelloApplication
+                                com.example.currencyconverterjavafx/nclan.ac.ahart.currencyconverterjavafx.Currency
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

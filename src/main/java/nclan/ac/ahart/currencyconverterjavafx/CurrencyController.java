@@ -13,8 +13,10 @@ import java.util.Locale;
  * The controller class plays a crucial role in JavaFX applications by acting as the bridge between the FXML markup that
  * defines the user interface (UI) and the application's logic. It handles user interactions, manages data, and updates
  * the UI based on changes in the data or user actions.
+ * Some docs say that this needs to implement the Initializable interface but documentation says
+ * that this is deprectaed and to use the zero parameter version instead, so no interface.
  */
-public class CurrencyController {
+public class CurrencyController{
     @FXML
     private Label labelOutput;
     @FXML
@@ -46,7 +48,8 @@ public class CurrencyController {
     public void initialize() {
         // Create an ObservableList of fruit options
         ObservableList<String> currencyOptions = FXCollections.observableArrayList(currency);
-        //ObservableList<String> currencyOptions = FXCollections.observableArrayList("GBP", "USD", "EUR");
+
+        txtFrom.setTooltip(new Tooltip("does this work"));
 
         // Set the items of the ComboBox to the ObservableList
         cbFrom.setItems(currencyOptions);
@@ -118,4 +121,10 @@ public class CurrencyController {
             alert.showAndWait();
         }
     }
+
+    /*@Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // doc recommend the zero parameter version
+        System.out.println("deprecated initializer");
+    }*/
 }

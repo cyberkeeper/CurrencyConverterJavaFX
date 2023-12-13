@@ -3,13 +3,20 @@ package nclan.ac.ahart.currencyconverterjavafx;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
-import java.io.InputStream;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 /**
  * The starting point for the application.
+ * The class that extends the Application class is the primary entry point for any JavaFX-based application. It serves
+ * as a container for the application's main logic and provides the framework for creating and managing the
+ * application's user interface (UI).
+ *
  * @author ahart
  */
 public class Currency extends Application {
@@ -21,7 +28,18 @@ public class Currency extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Currency.class.getResource("currencyPanel.fxml"));
+
+        //find out or set which locale are we running from
+        Locale whereAmI = Locale.getDefault();
+        //switch locale to Spain for testing the locale.
+        //Locale whereAmI = Locale.forLanguageTag("es");
+
+        //set the default location for the Java virtual machine
+        Locale.setDefault(whereAmI);
+        //get the resource bundle
+        ResourceBundle msgs = ResourceBundle.getBundle("converter");
+
+        FXMLLoader fxmlLoader = new FXMLLoader(Currency.class.getResource("currencyPanel.fxml"),msgs);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("FX Currency Converter");
 

@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="133.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nclan.ac.ahart.currencyconverterjavafx.CurrencyController">
    <children>
-      <TextField fx:id="txtFrom" accessibleText="Enter value to be converted" layoutX="105.0" layoutY="26.0" prefHeight="25.0" prefWidth="100.0" />
-      <ComboBox fx:id="cbFrom" accessibleText="Select the source currency" layoutX="222.0" layoutY="27.0" onAction="#convertCurrency" prefHeight="25.0" prefWidth="100.0" />
+      <TextField fx:id="txtFrom" accessibleText="%tipConvertAmount" layoutX="105.0" layoutY="26.0" prefHeight="25.0" prefWidth="100.0" promptText="%tipConvertAmount" />
+      <ComboBox fx:id="cbFrom" accessibleText="Select the source currency" layoutX="222.0" layoutY="27.0" onAction="#convertCurrency" prefHeight="25.0" prefWidth="100.0" promptText="%convert"></ComboBox>
       <ComboBox fx:id="cbDest" accessibleText="Select the destination currency" layoutX="369.0" layoutY="26.0" onAction="#convertCurrency" prefWidth="100.0" />
-      <Button fx:id="btnConvert" accessibleText="Click here to convert from source to destination currency" layoutX="38.0" layoutY="68.0" mnemonicParsing="false" onAction="#convertCurrency" text="Convert">
+      <Button fx:id="btnConvert" accessibleText="Click here to convert from source to destination currency" layoutX="38.0" layoutY="68.0" mnemonicParsing="false" onAction="#convertCurrency" text="%convert">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Label layoutX="38.0" layoutY="26.0" text="Convert ">
+      <Label layoutX="38.0" layoutY="26.0" text="%convert">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="334.0" layoutY="25.0" text="to">
+      <Label layoutX="334.0" layoutY="25.0" text="%to">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="labelOutput" layoutX="134.0" layoutY="74.0" text="No conversion has taken place yet.">
+      <Label fx:id="labelOutput" layoutX="134.0" layoutY="74.0" text="%emptyOutput">
          <font>
             <Font size="18.0" />
          </font>

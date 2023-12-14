@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -28,31 +27,23 @@ public class Currency extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-
-        //find out or set which locale are we running from
-        Locale whereAmI = Locale.getDefault();
-        //switch locale to Spain for testing the locale.
-        //Locale whereAmI = Locale.forLanguageTag("es");
-
-        //set the default location for the Java virtual machine
-        Locale.setDefault(whereAmI);
         //get the resource bundle
         ResourceBundle msgs = ResourceBundle.getBundle("converter");
 
         FXMLLoader fxmlLoader = new FXMLLoader(Currency.class.getResource("currencyPanel.fxml"),msgs);
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("FX Currency Converter");
+        stage.setTitle(msgs.getString("title"));
 
         InputStream inputStream = getClass().getResourceAsStream("/images/Icon-Money.png");
         Image image = new Image(inputStream);
-        //ImageView imageView = new ImageView(image);
         stage.getIcons().add(image);
         stage.setScene(scene);
         stage.show();
     }
 
     /**
-     * Not really needed as the JavaFX Launcher will take care of running the application.
+     * Not really needed as the JavaFX Launcher will take care of running the application. Good practice to have this
+     * so that our Launcher class can call this to run the UI stage of the application.
      * @param args None expected.
      */
     public static void main(String[] args) {

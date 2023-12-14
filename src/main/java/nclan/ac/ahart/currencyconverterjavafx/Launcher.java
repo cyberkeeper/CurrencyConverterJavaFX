@@ -1,5 +1,7 @@
 package nclan.ac.ahart.currencyconverterjavafx;
 
+import java.util.Locale;
+
 /**
  * A launcher class is not strictly mandatory, using a launcher class is a recommended practice for developing JavaFX
  * applications. It promotes code separation, simplifies customization, improves launch reliability, ensures
@@ -16,6 +18,14 @@ package nclan.ac.ahart.currencyconverterjavafx;
 public class Launcher {
     public static void main(String[] args)
     {
+        //find out or set which locale are we running from
+        //Locale whereAmI = Locale.getDefault();
+        //switch locale to Spain for testing the locale.
+        Locale whereAmI = Locale.forLanguageTag("es");
+
+        //set the default location for the Java virtual machine
+        Locale.setDefault(whereAmI);
+
         //call the main method within the Currency class. The Currency class extends Application class.
         Currency.main(args);
     }

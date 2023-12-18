@@ -12,7 +12,8 @@ There is a duplicate repository that contains a Java Swing version of the same a
 
 ## Screenshots
 
-![screenshot](https://github.com/cyberkeeper/CurrencyConverterGUI/assets/40637121/6596407f-2277-4919-b326-64a6c0b86af8)
+![image](https://github.com/cyberkeeper/CurrencyConverterJavaFX/assets/40637121/b46781c3-dfb2-42e9-8bff-be90a5233f3f)
+
 
 ## Requirements
 Microsoft Windows 10 or Windows 11

@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -13,7 +14,9 @@ import java.util.ResourceBundle;
  * The controller class plays a crucial role in JavaFX applications by acting as the bridge between the FXML markup that
  * defines the user interface (UI) and the application's logic. It handles user interactions, manages data, and updates
  * the UI based on changes in the data or user actions.
- * Some docs say that this needs to implement the Initializable interface but documentation says
+ * Any UI component that needs to be accessed here has to have the @FXML tag.
+ * Any method that is called by an action listener on the UI need to have the @FXML tag.
+ * Some websites say that this class needs to implement the Initializable interface but documentation says
  * that this is deprecated and to use the zero parameter version instead, so no interface.
  */
 public class CurrencyController{

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Main-Class: nclan.ac.ahart.currencyconverterjavafx.Launcher
-Class-Path: javafx-graphics-20.0.1.jar javafx-controls-20.0.1-win.jar ja
- vafx-fxml-20.0.1.jar javafx-graphics-20.0.1-win.jar javafx-base-20.0.1-
- win.jar javafx-fxml-20.0.1-win.jar javafx-base-20.0.1.jar javafx-contro
- ls-20.0.1.jar
+Class-Path: javafx-base-20.0.1.jar javafx-fxml-20.0.1.jar javafx-graphic
+ s-20.0.1.jar javafx-graphics-20.0.1-win.jar javafx-controls-20.0.1-win.
+ jar javafx-controls-20.0.1.jar javafx-base-20.0.1-win.jar javafx-fxml-2
+ 0.0.1-win.jar
 
